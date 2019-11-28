@@ -17,12 +17,8 @@ namespace WebCrawler_1.Controllers
             return View();
         }
 
-        //srp-results srp-list clearfix
-
-        public async Task<IActionResult> GetUrl(GetUrl search)
+        public IActionResult GetUrl(GetUrl search)
         {
-            var httpClient = new HttpClient();
-
             var itemSearch = search.NewSearch;
 
             if (!(itemSearch.Contains(" ")))
@@ -55,12 +51,17 @@ namespace WebCrawler_1.Controllers
                     .Where(node => node.GetAttributeValue("class", "")
                 .Equals("srp-results srp-list clearfix")).FirstOrDefault();
 
+                foreach (var item in docNodes.ChildNodes.Where(node => node.GetAttributeValue("class", "")
+                    .Equals("s-item   ")))
+                {
+                    return View(model: item.InnerText);
+                }
+                //var newDocs = docNodes.ChildNodes
+                //    .Where(node => node.GetAttributeValue("class", "")
+                //    .Equals("s-item   ")).Take(10);
 
-                var newDocs = docNodes.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item   ")).FirstOrDefault();
-
-                return View(model: newDocs.InnerText);
+                
+                return View("Index");
             }
         }
         public IActionResult Index()
