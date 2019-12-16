@@ -9,10 +9,8 @@ namespace WebCrawler_1.Models
     {
         public string NewSearch { get; set; }
 
-        public string TheIdSet { get; set; }
-
         public string ItemName { get; set; }
 
-        public int ItemPrice { get; set; }
+        public decimal ItemPrice { get; set; }
     }
 }

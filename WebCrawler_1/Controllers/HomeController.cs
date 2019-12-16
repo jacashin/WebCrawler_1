@@ -23,6 +23,9 @@ namespace WebCrawler_1.Controllers
             var itemName = search.ItemName;
             var itemPrice = search.ItemPrice;
 
+           
+            
+                                              
             if (!(itemSearch.Contains(" ")))
             {
                 string url = $"https://www.ebay.com/sch/i.html?_nkw={itemSearch}";
@@ -36,7 +39,7 @@ namespace WebCrawler_1.Controllers
 
                 var idSet = search.NewSearch;
 
-                for (int i = 1; i < 10; i++)
+                for (int i = 1; i < 7; i++)
                 {
                     idSet = $"srp-river-results-listing{i}";
                 }
@@ -69,9 +72,10 @@ namespace WebCrawler_1.Controllers
                     .Equals("s-item__detail s-item__detail--primary")).FirstOrDefault();
                
                 itemName = itemTitle_1.InnerText.ToString();
-
-                int.TryParse(itemPrice_4.InnerText.ToString(), out itemPrice);
-                // needs to be able to pass both, check this out? https://stackoverflow.com/questions/54285717/how-to-pass-multiple-objects-from-controller-action-to-view-in-mvc
+                var newestPrice = itemPrice_4.InnerText.ToString();
+                
+                
+                ViewData["ItemsPrice"] = newestPrice;
                 return View(model: itemName);
             } 
             else
@@ -122,8 +126,10 @@ namespace WebCrawler_1.Controllers
                     .Where(node => node.GetAttributeValue("class", "")
                     .Equals("s-item__detail s-item__detail--primary")).FirstOrDefault();
 
-                   itemName = itemTitle_1.InnerText.ToString();
+                var newestPrice = itemPrice_4.InnerText.ToString();
+                itemName = itemTitle_1.InnerText.ToString();
 
+                ViewData["ItemsPrice"] = newestPrice;
                 return View(model: itemName);
             }
         }
