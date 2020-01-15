@@ -1,9 +1,25 @@
-﻿@model string
+﻿@model GetUrl
 
-    <h2>
-        @Html.Raw(Model)
-    </h2>
-<h2>
-    @ViewData["ItemsPrice"]
-</h2>
+    <h3>
 
+        Name of Product: @Model.ItemName
+        <div></div>
+        Price of Product: @Model.ItemPrice
+        <div></div>
+        Search Time: @Model.Date
+        <div></div>
+        Item Search Term: @Model.NewSearch
+
+    </h3>
+
+
+
+<div>
+    <a asp-action="SaveInfo" >Save</a>
+</div>
+<form asp-action="SaveInfo" method="post">
+    <div class="form-group">
+        <input type="submit" value="Save Info" class="btn btn-primary" />
+    </div>
+</form>
+    

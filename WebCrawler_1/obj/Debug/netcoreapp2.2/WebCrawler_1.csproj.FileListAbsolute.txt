@@ -19,6 +19,7 @@ C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\Razor
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\Razor\Views\Home\GetUrl.cshtml.g.cs
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\Razor\Views\Home\SaveInfo.cshtml.g.cs
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs

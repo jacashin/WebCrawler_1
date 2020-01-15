@@ -6,26 +6,33 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using Microsoft.AspNetCore.Mvc;
+using WebCrawler_1.Data;
 using WebCrawler_1.Models;
 
 namespace WebCrawler_1.Controllers
 {
-    public class HomeController : Controller
+       public class HomeController : Controller
     {
+
+        private readonly WebCrawler_1Context _repository;
+
+        public HomeController(WebCrawler_1Context repository)
+        {
+            _repository = repository;
+        }
         public IActionResult GetPage()
         {
             return View();
         }
-
+        [HttpPost]
         public IActionResult GetUrl(GetUrl search)
         {
             var itemSearch = search.NewSearch;
             var itemName = search.ItemName;
-            var itemPrice = search.ItemPrice;
-
-           
-            
-                                              
+            var newestPrice = search.ItemPrice;
+            var getDate = DateTime.Now;
+            search.Date = getDate;
+                                             
             if (!(itemSearch.Contains(" ")))
             {
                 string url = $"https://www.ebay.com/sch/i.html?_nkw={itemSearch}";
@@ -47,6 +54,11 @@ namespace WebCrawler_1.Controllers
                      .Where(node => node.GetAttributeValue("id", "")
                      .Equals(idSet)).FirstOrDefault();
 
+                if (newDocs == null)
+                {
+                    return View("GetPage");
+                }
+
                 var itemPrice_1 = newDocs.ChildNodes
                     .Where(node => node.GetAttributeValue("class", "")
                     .Equals("s-item__wrapper clearfix")).FirstOrDefault();
@@ -54,6 +66,14 @@ namespace WebCrawler_1.Controllers
                 var itemPrice_2 = itemPrice_1.ChildNodes
                     .Where(node => node.GetAttributeValue("class", "")
                     .Equals("s-item__info clearfix")).FirstOrDefault();
+
+                var itemPrice_3 = itemPrice_2.ChildNodes
+                    .Where(node => node.GetAttributeValue("class", "")
+                    .Equals("s-item__details clearfix")).FirstOrDefault();
+
+                var itemPrice_4 = itemPrice_3.ChildNodes
+                    .Where(node => node.GetAttributeValue("class", "")
+                    .Equals("s-item__detail s-item__detail--primary")).FirstOrDefault();
 
                 var itemTitle = itemPrice_2.ChildNodes
                     .Where(node => node.GetAttributeValue("class", "")
@@ -63,24 +83,23 @@ namespace WebCrawler_1.Controllers
                     .Where(node => node.GetAttributeValue("class", "")
                     .Equals("s-item__title")).FirstOrDefault();
 
-                var itemPrice_3 = itemPrice_2.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__details clearfix")).FirstOrDefault();
-
-                var itemPrice_4 = itemPrice_3.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__detail s-item__detail--primary")).FirstOrDefault();
-               
                 itemName = itemTitle_1.InnerText.ToString();
-                var newestPrice = itemPrice_4.InnerText.ToString();
-                
-                
-                ViewData["ItemsPrice"] = newestPrice;
-                return View(model: itemName);
+                var itemPrice = itemPrice_4.InnerText.ToString();
+                var newItemPrice = itemPrice.Replace("$", "");
+                decimal.TryParse(newItemPrice, out newestPrice);
+
+                var theModel = new GetUrl
+                {
+                    ItemName = itemName,
+                    ItemPrice = newestPrice,
+                    NewSearch = itemSearch,
+                    Date = getDate
+                };
+
+                return View(theModel);
             } 
             else
-            {
-                
+            {               
                 var addPlus = itemSearch.Replace(" ", "+");
 
                 var urlWithMultiple = $"https://www.ebay.com/sch/i.html?_nkw={addPlus}";
@@ -94,13 +113,18 @@ namespace WebCrawler_1.Controllers
 
                 var idSet = search.NewSearch;
 
-                for (int i = 1; i < 10; i++)
+                for (int i = 1; i < 7; i++)
                 {
                     idSet = $"srp-river-results-listing{i}";                   
                 }
                 var newDocs = docNodes.ChildNodes
                      .Where(node => node.GetAttributeValue("id", "")
                      .Equals(idSet)).FirstOrDefault();
+
+                if (newDocs == null)
+                {
+                    return View("GetPage");
+                }
 
                 var itemPrice_1 = newDocs.ChildNodes
                     .Where(node => node.GetAttributeValue("class", "")
@@ -110,14 +134,6 @@ namespace WebCrawler_1.Controllers
                     .Where(node => node.GetAttributeValue("class", "")
                     .Equals("s-item__info clearfix")).FirstOrDefault();
 
-                var itemTitle = itemPrice_2.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__link")).FirstOrDefault();
-
-                var itemTitle_1 = itemTitle.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__title")).FirstOrDefault();
-
                 var itemPrice_3 = itemPrice_2.ChildNodes
                     .Where(node => node.GetAttributeValue("class", "")
                     .Equals("s-item__details clearfix")).FirstOrDefault();
@@ -126,13 +142,52 @@ namespace WebCrawler_1.Controllers
                     .Where(node => node.GetAttributeValue("class", "")
                     .Equals("s-item__detail s-item__detail--primary")).FirstOrDefault();
 
-                var newestPrice = itemPrice_4.InnerText.ToString();
+                var itemTitle = itemPrice_2.ChildNodes
+                    .Where(node => node.GetAttributeValue("class", "")
+                    .Equals("s-item__link")).FirstOrDefault();
+
+                var itemTitle_1 = itemTitle.ChildNodes
+                    .Where(node => node.GetAttributeValue("class", "")
+                    .Equals("s-item__title")).FirstOrDefault();
+
                 itemName = itemTitle_1.InnerText.ToString();
 
-                ViewData["ItemsPrice"] = newestPrice;
-                return View(model: itemName);
+                var itemPrice = itemPrice_4.InnerText.ToString();
+
+                var newItemPrice = itemPrice.Replace("$", "");
+
+                decimal.TryParse(newItemPrice, out newestPrice);
+
+                var theModel = new GetUrl
+                {
+                    ItemName = itemName,
+                    ItemPrice = newestPrice,
+                    NewSearch = itemSearch,
+                    Date = getDate
+                };
+
+                return View(theModel);
             }
         }
+        [HttpPost]
+        public IActionResult SaveInfo(GetUrl search)
+        {
+            if (!(ModelState.IsValid))
+            {
+                return View("Index");
+            }
+            _repository.Add(search);
+
+
+            //_repository.Add(search.ItemName);
+            //_repository.Add(search.ItemPrice);
+            //_repository.Add(search.Date);
+            //_repository.Add(search.NewSearch);
+
+            _repository.SaveChanges();
+            return CreatedAtAction("SaveInfo", search);
+        }
+
         public IActionResult Index()
         {
             return View();
