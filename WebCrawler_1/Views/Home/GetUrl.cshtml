@@ -12,11 +12,8 @@
 
     </h3>
 
+@*{@Model.ItemName.Where(i => i.)}*@
 
-
-<div>
-    <a asp-action="SaveInfo" >Save</a>
-</div>
 <form asp-action="SaveInfo" method="post">
     <div class="form-group">
         <input type="submit" value="Save Info" class="btn btn-primary" />

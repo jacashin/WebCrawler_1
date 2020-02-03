@@ -35,12 +35,13 @@ namespace WebCrawler_1
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            services.AddHttpContextAccessor();
 
             services.AddDbContext<WebCrawler_1Context>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("WebCrawler_1Context"));
-            });
-
+            options.UseSqlServer(Configuration.GetConnectionString("WebCrawler_1Context"));
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
         }

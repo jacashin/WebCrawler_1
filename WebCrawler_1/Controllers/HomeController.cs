@@ -11,11 +11,9 @@ using WebCrawler_1.Models;
 
 namespace WebCrawler_1.Controllers
 {
-       public class HomeController : Controller
+    public class HomeController : Controller
     {
-
         private readonly WebCrawler_1Context _repository;
-
         public HomeController(WebCrawler_1Context repository)
         {
             _repository = repository;
@@ -27,6 +25,8 @@ namespace WebCrawler_1.Controllers
         [HttpPost]
         public IActionResult GetUrl(GetUrl search)
         {
+            var dbData = new WebCrawler_1Context();
+
             var itemSearch = search.NewSearch;
             var itemName = search.ItemName;
             var newestPrice = search.ItemPrice;
@@ -84,6 +84,7 @@ namespace WebCrawler_1.Controllers
                     .Equals("s-item__title")).FirstOrDefault();
 
                 itemName = itemTitle_1.InnerText.ToString();
+
                 var itemPrice = itemPrice_4.InnerText.ToString();
                 var newItemPrice = itemPrice.Replace("$", "");
                 decimal.TryParse(newItemPrice, out newestPrice);
@@ -95,6 +96,10 @@ namespace WebCrawler_1.Controllers
                     NewSearch = itemSearch,
                     Date = getDate
                 };
+                var qwerty = _repository.GetUrls;
+
+                var dataAdded = qwerty.Add(theModel);
+                _repository.SaveChanges();
 
                 return View(theModel);
             } 
@@ -165,27 +170,32 @@ namespace WebCrawler_1.Controllers
                     NewSearch = itemSearch,
                     Date = getDate
                 };
+                var qwerty = _repository.GetUrls;
+
+                var dataAdded = qwerty.Add(theModel);
+                _repository.SaveChanges();
 
                 return View(theModel);
             }
+
         }
-        [HttpPost]
+        //[HttpPost]
         public IActionResult SaveInfo(GetUrl search)
         {
-            if (!(ModelState.IsValid))
-            {
-                return View("Index");
-            }
-            _repository.Add(search);
+            //    if (!(ModelState.IsValid))
+            //    {
+            //        return View("Index");
+            //    }
+            //    _repository.Add(search);
 
 
-            //_repository.Add(search.ItemName);
-            //_repository.Add(search.ItemPrice);
-            //_repository.Add(search.Date);
-            //_repository.Add(search.NewSearch);
+            //    //_repository.Add(search.ItemName);
+            //    //_repository.Add(search.ItemPrice);
+            //    //_repository.Add(search.Date);
+            //    //_repository.Add(search.NewSearch);
 
-            _repository.SaveChanges();
-            return CreatedAtAction("SaveInfo", search);
+            //    _repository.SaveChanges();
+            return View();
         }
 
         public IActionResult Index()

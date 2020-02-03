@@ -10,7 +10,7 @@ namespace WebCrawler_1.Data
 {
     public class WebCrawler_1Context : DbContext
     {
-        public WebCrawler_1Context (DbContextOptions<WebCrawler_1Context> options)
+        public WebCrawler_1Context(DbContextOptions<WebCrawler_1Context> options)
             : base(options)
         {
         }
