@@ -40,7 +40,7 @@ namespace WebCrawler_1
             services.AddDbContext<WebCrawler_1Context>(options =>
             {
             options.UseSqlServer(Configuration.GetConnectionString("WebCrawler_1Context"));
-            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 

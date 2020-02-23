@@ -20,6 +20,7 @@ namespace WebCrawler_1.Controllers
         }
         public IActionResult GetPage()
         {
+            
             return View();
         }
         [HttpPost]
@@ -32,11 +33,11 @@ namespace WebCrawler_1.Controllers
             var newestPrice = search.ItemPrice;
             var getDate = DateTime.Now;
             search.Date = getDate;
-                                             
+
             if (!(itemSearch.Contains(" ")))
             {
                 string url = $"https://www.ebay.com/sch/i.html?_nkw={itemSearch}";
-                
+
                 var web = new HtmlWeb();
                 var document = web.Load(url);
 
@@ -102,9 +103,9 @@ namespace WebCrawler_1.Controllers
                 _repository.SaveChanges();
 
                 return View(theModel);
-            } 
+            }
             else
-            {               
+            {
                 var addPlus = itemSearch.Replace(" ", "+");
 
                 var urlWithMultiple = $"https://www.ebay.com/sch/i.html?_nkw={addPlus}";
@@ -120,7 +121,7 @@ namespace WebCrawler_1.Controllers
 
                 for (int i = 1; i < 7; i++)
                 {
-                    idSet = $"srp-river-results-listing{i}";                   
+                    idSet = $"srp-river-results-listing{i}";
                 }
                 var newDocs = docNodes.ChildNodes
                      .Where(node => node.GetAttributeValue("id", "")
@@ -179,24 +180,21 @@ namespace WebCrawler_1.Controllers
             }
 
         }
-        //[HttpPost]
-        public IActionResult SaveInfo(GetUrl search)
+        [HttpGet]
+        public IActionResult SaveInfo(int key, GetUrl getUrl)
         {
-            //    if (!(ModelState.IsValid))
-            //    {
-            //        return View("Index");
-            //    }
-            //    _repository.Add(search);
+            //var infoFromRepo = _repository.GetUrls.Select(r => r.ID == key);
+            var viewInfo = _repository.GetUrls.Where(i => i.ItemPrice > 100);
 
-
-            //    //_repository.Add(search.ItemName);
-            //    //_repository.Add(search.ItemPrice);
-            //    //_repository.Add(search.Date);
-            //    //_repository.Add(search.NewSearch);
-
-            //    _repository.SaveChanges();
-            return View();
+            return View(viewInfo);
         }
+        //public object DeleteInfo(int key, GetUrl getUrl)
+        //{
+        //    var infoFromRepo = _repository.GetUrls.Select(r => r.ID == key);
+        //    _repository.GetUrls.Remove
+        //        _repository.SaveChanges();
+        //    return Ok();
+        //}
 
         public IActionResult Index()
         {
@@ -215,3 +213,4 @@ namespace WebCrawler_1.Controllers
         }
     }
 }
+

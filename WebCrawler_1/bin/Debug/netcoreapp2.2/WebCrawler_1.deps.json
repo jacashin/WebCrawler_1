@@ -24,17 +24,41 @@
     ".NETCoreApp,Version=v2.2": {
       "WebCrawler_1/1.0.0": {
         "dependencies": {
+          "ChartJS": "19.2.6",
+          "DevExtreme.AspNet.Data": "2.5.1",
           "HtmlAgilityPack": "1.11.17",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.0"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1"
         },
         "runtime": {
           "WebCrawler_1.dll": {}
         },
         "compile": {
           "WebCrawler_1.dll": {}
+        }
+      },
+      "ChartJS/19.2.6": {
+        "dependencies": {
+          "jQuery": "3.4.1",
+          "jquery-globalize": "1.1.1"
+        }
+      },
+      "cldrjs/0.4.4": {},
+      "DevExtreme.AspNet.Data/2.5.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DevExtreme.AspNet.Data.dll": {
+            "assemblyVersion": "2.5.1.0",
+            "fileVersion": "2.5.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/DevExtreme.AspNet.Data.dll": {}
         }
       },
       "HtmlAgilityPack/1.11.17": {
@@ -54,11 +78,17 @@
           "lib/netstandard2.0/HtmlAgilityPack.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.0": {
+      "jQuery/3.4.1": {},
+      "jquery-globalize/1.1.1": {
+        "dependencies": {
+          "cldrjs": "0.4.4"
+        }
+      },
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.1": {
         "runtime": {
           "lib/net461/dotnet-aspnet-codegenerator-design.exe": {
-            "assemblyVersion": "3.1.0.0",
-            "fileVersion": "3.100.19.57003"
+            "assemblyVersion": "3.1.1.0",
+            "fileVersion": "3.100.120.7405"
           }
         },
         "compile": {
@@ -3288,6 +3318,27 @@
       "serviceable": false,
       "sha512": ""
     },
+    "ChartJS/19.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RUQgTQLhSYwG/Njt0YGSyGZ4e8EiAEsk+W+Kp52hAcrx1QI9pmXalslVcXQuwIqsXF0FrzP3fmGP1zTmbJmOrA==",
+      "path": "chartjs/19.2.6",
+      "hashPath": "chartjs.19.2.6.nupkg.sha512"
+    },
+    "cldrjs/0.4.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QTJ2r9FpA1XOFPRguhHAFjJZZJVil5TFOUCTLpN02BjQtgXgVDpt5VFyxQp/uNwEh0InNWLdIugl2Ls1IBqfXg==",
+      "path": "cldrjs/0.4.4",
+      "hashPath": "cldrjs.0.4.4.nupkg.sha512"
+    },
+    "DevExtreme.AspNet.Data/2.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iOsfNFr1o1BlBN64ypDA9c65G/frrxiB54oB05c59riW88btB/oMdvsR1G0lCqvQlxTP+usVDgzCXtiQnnHlig==",
+      "path": "devextreme.aspnet.data/2.5.1",
+      "hashPath": "devextreme.aspnet.data.2.5.1.nupkg.sha512"
+    },
     "HtmlAgilityPack/1.11.17": {
       "type": "package",
       "serviceable": true,
@@ -3295,12 +3346,26 @@
       "path": "htmlagilitypack/1.11.17",
       "hashPath": "htmlagilitypack.1.11.17.nupkg.sha512"
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.0": {
+    "jQuery/3.4.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZHXVe8nDkHXmPlBNGOl3SIxoUKfah2OJOKKmq769gBMqHJMaOrFKhPYsHdTORjKUtwc3AlO1CMLgnljFyyxA/Q==",
-      "path": "microsoft.visualstudio.web.codegeneration.design/3.1.0",
-      "hashPath": "microsoft.visualstudio.web.codegeneration.design.3.1.0.nupkg.sha512"
+      "sha512": "sha512-vDD5O2nuVN2rF0rTASFSJNM5ef50niEP5HsXDQyXPPZH1rBaAaLtCutHG5wvXOPmrQw+MEZHOcOk9kYmdnL/Xw==",
+      "path": "jquery/3.4.1",
+      "hashPath": "jquery.3.4.1.nupkg.sha512"
+    },
+    "jquery-globalize/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tkRqYLIONjwamztg1rG+xyh2asA0ARLOPorfF3N9JW8fWr+srtPAeUNLFHF6NZAQ7Avnkzgi2OC505lK5avFag==",
+      "path": "jquery-globalize/1.1.1",
+      "hashPath": "jquery-globalize.1.1.1.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dPuG5OJUL/1mlToWYhu83qYQymr24n7uDRrSTn46rejVlON6OLtTqZNve5CcppR0NtHkalINrOjlY+0dXNnAKg==",
+      "path": "microsoft.visualstudio.web.codegeneration.design/3.1.1",
+      "hashPath": "microsoft.visualstudio.web.codegeneration.design.3.1.1.nupkg.sha512"
     },
     "System.Net.Http/4.3.2": {
       "type": "package",

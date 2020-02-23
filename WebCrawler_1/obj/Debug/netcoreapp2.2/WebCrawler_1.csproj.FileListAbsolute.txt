@@ -8,6 +8,7 @@ C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\bin\Debug\netcoreapp2.2\WebCr
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\bin\Debug\netcoreapp2.2\WebCrawler_1.pdb
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\bin\Debug\netcoreapp2.2\WebCrawler_1.Views.dll
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\bin\Debug\netcoreapp2.2\WebCrawler_1.Views.pdb
+C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCrawler_1.csprojAssemblyReference.cache
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCrawler_1.RazorAssemblyInfo.cache
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCrawler_1.RazorAssemblyInfo.cs
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCrawler_1.AssemblyInfoInputs.cache
@@ -32,4 +33,3 @@ C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCr
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCrawler_1.dll
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCrawler_1.pdb
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCrawler_1.csproj.CopyComplete
-C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCrawler_1.csprojAssemblyReference.cache

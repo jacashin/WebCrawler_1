@@ -2,6 +2,29 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "ChartJS/19.2.6": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "3.4.1",
+          "jquery-globalize": "1.1.1"
+        }
+      },
+      "cldrjs/0.4.4": {
+        "type": "package"
+      },
+      "DevExtreme.AspNet.Data/2.5.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.0",
+          "Newtonsoft.Json": "11.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/DevExtreme.AspNet.Data.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DevExtreme.AspNet.Data.dll": {}
+        }
+      },
       "HtmlAgilityPack/1.11.17": {
         "type": "package",
         "dependencies": {
@@ -15,6 +38,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/HtmlAgilityPack.dll": {}
+        }
+      },
+      "jQuery/3.4.1": {
+        "type": "package"
+      },
+      "jquery-globalize/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "cldrjs": "0.4.4"
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -2701,7 +2733,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.0": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.1": {
         "type": "package",
         "compile": {
           "lib/net461/dotnet-aspnet-codegenerator-design.exe": {}
@@ -4487,6 +4519,71 @@
     }
   },
   "libraries": {
+    "ChartJS/19.2.6": {
+      "sha512": "RUQgTQLhSYwG/Njt0YGSyGZ4e8EiAEsk+W+Kp52hAcrx1QI9pmXalslVcXQuwIqsXF0FrzP3fmGP1zTmbJmOrA==",
+      "type": "package",
+      "path": "chartjs/19.2.6",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "chartjs.19.2.6.nupkg.sha512",
+        "chartjs.nuspec",
+        "content/net/Scripts/dx.viz.debug.js",
+        "content/net/Scripts/dx.viz.js",
+        "content/net/Scripts/vectormap-data/africa.js",
+        "content/net/Scripts/vectormap-data/canada.js",
+        "content/net/Scripts/vectormap-data/eurasia.js",
+        "content/net/Scripts/vectormap-data/europe.js",
+        "content/net/Scripts/vectormap-data/usa.js",
+        "content/net/Scripts/vectormap-data/world.js",
+        "content/net/Scripts/vectormap-utils/dx.vectormaputils.debug.js",
+        "content/net/Scripts/vectormap-utils/dx.vectormaputils.js",
+        "content/net/Scripts/vectormap-utils/dx.vectormaputils.node.js",
+        "content/netcore/js/dx.viz.debug.js",
+        "content/netcore/js/dx.viz.js",
+        "content/netcore/js/vectormap-data/africa.js",
+        "content/netcore/js/vectormap-data/canada.js",
+        "content/netcore/js/vectormap-data/eurasia.js",
+        "content/netcore/js/vectormap-data/europe.js",
+        "content/netcore/js/vectormap-data/usa.js",
+        "content/netcore/js/vectormap-data/world.js",
+        "content/netcore/js/vectormap-utils/dx.vectormaputils.debug.js",
+        "content/netcore/js/vectormap-utils/dx.vectormaputils.js",
+        "content/netcore/js/vectormap-utils/dx.vectormaputils.node.js",
+        "tools/install.ps1"
+      ]
+    },
+    "cldrjs/0.4.4": {
+      "sha512": "QTJ2r9FpA1XOFPRguhHAFjJZZJVil5TFOUCTLpN02BjQtgXgVDpt5VFyxQp/uNwEh0InNWLdIugl2Ls1IBqfXg==",
+      "type": "package",
+      "path": "cldrjs/0.4.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cldrjs.0.4.4.nupkg.sha512",
+        "cldrjs.nuspec",
+        "content/Scripts/cldr.js",
+        "content/Scripts/cldr/event.js",
+        "content/Scripts/cldr/supplemental.js",
+        "content/Scripts/cldr/unresolved.js"
+      ]
+    },
+    "DevExtreme.AspNet.Data/2.5.1": {
+      "sha512": "iOsfNFr1o1BlBN64ypDA9c65G/frrxiB54oB05c59riW88btB/oMdvsR1G0lCqvQlxTP+usVDgzCXtiQnnHlig==",
+      "type": "package",
+      "path": "devextreme.aspnet.data/2.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "devextreme.aspnet.data.2.5.1.nupkg.sha512",
+        "devextreme.aspnet.data.nuspec",
+        "lib/net452/DevExtreme.AspNet.Data.dll",
+        "lib/net452/DevExtreme.AspNet.Data.xml",
+        "lib/netstandard2.0/DevExtreme.AspNet.Data.dll",
+        "lib/netstandard2.0/DevExtreme.AspNet.Data.xml"
+      ]
+    },
     "HtmlAgilityPack/1.11.17": {
       "sha512": "/aFnzxmvcWj9D2KEH9tEHE4rv5ZOGOTmgWtZK/Wr3ZwU0NrXVwzpPM2O57Roe08N9/h7tvwMD8lqT6KlKPahBg==",
       "type": "package",
@@ -4533,6 +4630,48 @@
         "lib/uap10.0/HtmlAgilityPack.dll",
         "lib/uap10.0/HtmlAgilityPack.pdb",
         "lib/uap10.0/HtmlAgilityPack.pri"
+      ]
+    },
+    "jQuery/3.4.1": {
+      "sha512": "vDD5O2nuVN2rF0rTASFSJNM5ef50niEP5HsXDQyXPPZH1rBaAaLtCutHG5wvXOPmrQw+MEZHOcOk9kYmdnL/Xw==",
+      "type": "package",
+      "path": "jquery/3.4.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-3.4.1-vsdoc.js",
+        "Content/Scripts/jquery-3.4.1.js",
+        "Content/Scripts/jquery-3.4.1.min.js",
+        "Content/Scripts/jquery-3.4.1.min.map",
+        "Content/Scripts/jquery-3.4.1.slim.js",
+        "Content/Scripts/jquery-3.4.1.slim.min.js",
+        "Content/Scripts/jquery-3.4.1.slim.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-3.4.1.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.3.4.1.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
+    "jquery-globalize/1.1.1": {
+      "sha512": "tkRqYLIONjwamztg1rG+xyh2asA0ARLOPorfF3N9JW8fWr+srtPAeUNLFHF6NZAQ7Avnkzgi2OC505lK5avFag==",
+      "type": "package",
+      "path": "jquery-globalize/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/globalize.js",
+        "content/Scripts/globalize/currency.js",
+        "content/Scripts/globalize/date.js",
+        "content/Scripts/globalize/message.js",
+        "content/Scripts/globalize/number.js",
+        "content/Scripts/globalize/plural.js",
+        "content/Scripts/globalize/relative-time.js",
+        "content/Scripts/globalize/unit.js",
+        "jquery-globalize.1.1.1.nupkg.sha512",
+        "jquery-globalize.nuspec"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -7260,10 +7399,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.0": {
-      "sha512": "ZHXVe8nDkHXmPlBNGOl3SIxoUKfah2OJOKKmq769gBMqHJMaOrFKhPYsHdTORjKUtwc3AlO1CMLgnljFyyxA/Q==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.1": {
+      "sha512": "dPuG5OJUL/1mlToWYhu83qYQymr24n7uDRrSTn46rejVlON6OLtTqZNve5CcppR0NtHkalINrOjlY+0dXNnAKg==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.design/3.1.0",
+      "path": "microsoft.visualstudio.web.codegeneration.design/3.1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7271,7 +7410,7 @@
         "lib/net461/dotnet-aspnet-codegenerator-design.xml",
         "lib/netcoreapp3.1/dotnet-aspnet-codegenerator-design.dll",
         "lib/netcoreapp3.1/dotnet-aspnet-codegenerator-design.xml",
-        "microsoft.visualstudio.web.codegeneration.design.3.1.0.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.design.3.1.1.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.design.nuspec",
         "runtimes/win-arm/lib/net461/dotnet-aspnet-codegenerator-design.exe",
         "runtimes/win-arm/lib/net461/dotnet-aspnet-codegenerator-design.xml",
@@ -12183,11 +12322,13 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "ChartJS >= 19.2.6",
+      "DevExtreme.AspNet.Data >= 2.5.1",
       "HtmlAgilityPack >= 1.11.17",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.0"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.1"
     ]
   },
   "packageFolders": {
@@ -12231,6 +12372,14 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "ChartJS": {
+            "target": "Package",
+            "version": "[19.2.6, )"
+          },
+          "DevExtreme.AspNet.Data": {
+            "target": "Package",
+            "version": "[2.5.1, )"
+          },
           "HtmlAgilityPack": {
             "target": "Package",
             "version": "[1.11.17, )"
@@ -12254,7 +12403,7 @@
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
-            "version": "[3.1.0, )"
+            "version": "[3.1.1, )"
           }
         },
         "imports": [
@@ -12276,7 +12425,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.VisualStudio.Web.CodeGeneration.Design 3.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
+      "message": "Package 'Microsoft.VisualStudio.Web.CodeGeneration.Design 3.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.VisualStudio.Web.CodeGeneration.Design",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.2"

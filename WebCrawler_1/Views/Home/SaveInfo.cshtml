@@ -1,12 +1,57 @@
-﻿@model GetUrl
+﻿@using WebCrawler_1.Data;
+@using WebCrawler_1.Models;
+@model IEnumerable<GetUrl>
 @{
     ViewData["Title"] = "SaveInfo";
 }
 
 <h1>Save Info</h1>
 
-<h2>
-    @Model.ItemName
-    @Model.Date
-    @Model.ItemPrice
-</h2>
+<table class="table-bordered">
+    <tr>
+        <th class="col-form-label-sm">
+            Id Number
+        </th>
+        <th>
+            Searched Item
+        </th>
+        <th>
+            Item Name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Date
+        </th>
+    </tr>
+    @{ foreach (var item in Model)
+        {
+
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.NewSearch
+            </td>
+            <td>
+                @item.ItemName
+            </td>
+
+            <td>
+                @item.ItemPrice
+            </td>
+
+            <td>
+                @item.Date
+            </td>
+
+            <td>
+            </td>
+
+        </tr>
+        }
+    }
+</table>
+

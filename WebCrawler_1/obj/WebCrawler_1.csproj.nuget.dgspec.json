@@ -41,6 +41,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "ChartJS": {
+              "target": "Package",
+              "version": "[19.2.6, )"
+            },
+            "DevExtreme.AspNet.Data": {
+              "target": "Package",
+              "version": "[2.5.1, )"
+            },
             "HtmlAgilityPack": {
               "target": "Package",
               "version": "[1.11.17, )"
@@ -64,7 +72,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[3.1.1, )"
             }
           },
           "imports": [
