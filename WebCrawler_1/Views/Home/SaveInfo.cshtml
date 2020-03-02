@@ -1,5 +1,5 @@
 ﻿@using WebCrawler_1.Data;
-@using WebCrawler_1.Models;
+@*@using WebCrawler_1.Models;*@
 @model IEnumerable<GetUrl>
 @{
     ViewData["Title"] = "SaveInfo";
@@ -54,4 +54,9 @@
         }
     }
 </table>
+<form asp-action="Chart" method="post">
+    <div class="form-group">
+        <input type="submit" value="See Chart" class="btn btn-primary" />
+    </div>
+</form>
 

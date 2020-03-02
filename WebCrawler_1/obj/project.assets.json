@@ -12,19 +12,6 @@
       "cldrjs/0.4.4": {
         "type": "package"
       },
-      "DevExtreme.AspNet.Data/2.5.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CSharp": "4.4.0",
-          "Newtonsoft.Json": "11.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/DevExtreme.AspNet.Data.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/DevExtreme.AspNet.Data.dll": {}
-        }
-      },
       "HtmlAgilityPack/1.11.17": {
         "type": "package",
         "dependencies": {
@@ -4567,21 +4554,6 @@
         "content/Scripts/cldr/event.js",
         "content/Scripts/cldr/supplemental.js",
         "content/Scripts/cldr/unresolved.js"
-      ]
-    },
-    "DevExtreme.AspNet.Data/2.5.1": {
-      "sha512": "iOsfNFr1o1BlBN64ypDA9c65G/frrxiB54oB05c59riW88btB/oMdvsR1G0lCqvQlxTP+usVDgzCXtiQnnHlig==",
-      "type": "package",
-      "path": "devextreme.aspnet.data/2.5.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "devextreme.aspnet.data.2.5.1.nupkg.sha512",
-        "devextreme.aspnet.data.nuspec",
-        "lib/net452/DevExtreme.AspNet.Data.dll",
-        "lib/net452/DevExtreme.AspNet.Data.xml",
-        "lib/netstandard2.0/DevExtreme.AspNet.Data.dll",
-        "lib/netstandard2.0/DevExtreme.AspNet.Data.xml"
       ]
     },
     "HtmlAgilityPack/1.11.17": {
@@ -12323,7 +12295,6 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "ChartJS >= 19.2.6",
-      "DevExtreme.AspNet.Data >= 2.5.1",
       "HtmlAgilityPack >= 1.11.17",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
@@ -12376,10 +12347,6 @@
             "target": "Package",
             "version": "[19.2.6, )"
           },
-          "DevExtreme.AspNet.Data": {
-            "target": "Package",
-            "version": "[2.5.1, )"
-          },
           "HtmlAgilityPack": {
             "target": "Package",
             "version": "[1.11.17, )"
@@ -12416,7 +12383,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   },

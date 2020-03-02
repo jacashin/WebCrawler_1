@@ -33,3 +33,4 @@ C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCr
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCrawler_1.dll
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCrawler_1.pdb
 C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\WebCrawler_1.csproj.CopyComplete
+C:\Users\YL\source\repos\WebCrawler_1\WebCrawler_1\obj\Debug\netcoreapp2.2\Razor\Views\Home\Chart.cshtml.g.cs

@@ -25,7 +25,6 @@
       "WebCrawler_1/1.0.0": {
         "dependencies": {
           "ChartJS": "19.2.6",
-          "DevExtreme.AspNet.Data": "2.5.1",
           "HtmlAgilityPack": "1.11.17",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
@@ -46,21 +45,6 @@
         }
       },
       "cldrjs/0.4.4": {},
-      "DevExtreme.AspNet.Data/2.5.1": {
-        "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
-          "Newtonsoft.Json": "11.0.2"
-        },
-        "runtime": {
-          "lib/netstandard2.0/DevExtreme.AspNet.Data.dll": {
-            "assemblyVersion": "2.5.1.0",
-            "fileVersion": "2.5.1.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/DevExtreme.AspNet.Data.dll": {}
-        }
-      },
       "HtmlAgilityPack/1.11.17": {
         "dependencies": {
           "System.Net.Http": "4.3.2",
@@ -3331,13 +3315,6 @@
       "sha512": "sha512-QTJ2r9FpA1XOFPRguhHAFjJZZJVil5TFOUCTLpN02BjQtgXgVDpt5VFyxQp/uNwEh0InNWLdIugl2Ls1IBqfXg==",
       "path": "cldrjs/0.4.4",
       "hashPath": "cldrjs.0.4.4.nupkg.sha512"
-    },
-    "DevExtreme.AspNet.Data/2.5.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-iOsfNFr1o1BlBN64ypDA9c65G/frrxiB54oB05c59riW88btB/oMdvsR1G0lCqvQlxTP+usVDgzCXtiQnnHlig==",
-      "path": "devextreme.aspnet.data/2.5.1",
-      "hashPath": "devextreme.aspnet.data.2.5.1.nupkg.sha512"
     },
     "HtmlAgilityPack/1.11.17": {
       "type": "package",

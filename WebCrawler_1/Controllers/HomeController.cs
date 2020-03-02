@@ -183,19 +183,18 @@ namespace WebCrawler_1.Controllers
         [HttpGet]
         public IActionResult SaveInfo(int key, GetUrl getUrl)
         {
-            //var infoFromRepo = _repository.GetUrls.Select(r => r.ID == key);
-            var viewInfo = _repository.GetUrls.Where(i => i.ItemPrice > 100);
+            var viewInfo = _repository.GetUrls;
 
             return View(viewInfo);
         }
-        //public object DeleteInfo(int key, GetUrl getUrl)
-        //{
-        //    var infoFromRepo = _repository.GetUrls.Select(r => r.ID == key);
-        //    _repository.GetUrls.Remove
-        //        _repository.SaveChanges();
-        //    return Ok();
-        //}
-
+        public IActionResult Chart()
+        {
+            var chartInfo = new GetUrl();
+            var viewInfo = _repository.GetUrls.Where(i => i.NewSearch == "xbox");
+               
+            return View(viewInfo);
+        }
+    
         public IActionResult Index()
         {
             return View();
