@@ -26,12 +26,10 @@ namespace WebCrawler_1.Controllers
         [HttpPost]
         public IActionResult GetUrl(GetUrl search)
         {
-            var dbData = new WebCrawler_1Context();
-
             var itemSearch = search.NewSearch;
             var itemName = search.ItemName;
             var newestPrice = search.ItemPrice;
-            var getDate = DateTime.Now;
+            var getDate = DateTime.Today;
             search.Date = getDate;
 
             if (!(itemSearch.Contains(" ")))
@@ -41,52 +39,24 @@ namespace WebCrawler_1.Controllers
                 var web = new HtmlWeb();
                 var document = web.Load(url);
 
-                var docNodes = document.DocumentNode.Descendants("ul")
+                var listingTitle = document.DocumentNode.Descendants("h3")
                      .Where(node => node.GetAttributeValue("class", "")
-                 .Equals("srp-results srp-list clearfix")).FirstOrDefault();
+                 .Equals("s-item__title")).FirstOrDefault().GetDirectInnerText();
 
+                var price = document.DocumentNode.Descendants("span")
+                     .Where(node => node.GetAttributeValue("class", "")
+                 .Equals("s-item__price")).FirstOrDefault().GetDirectInnerText();
+                
                 var idSet = search.NewSearch;
 
-                for (int i = 1; i < 7; i++)
-                {
-                    idSet = $"srp-river-results-listing{i}";
-                }
-                var newDocs = docNodes.ChildNodes
-                     .Where(node => node.GetAttributeValue("id", "")
-                     .Equals(idSet)).FirstOrDefault();
-
-                if (newDocs == null)
+                if (listingTitle == null || price == null)
                 {
                     return View("GetPage");
                 }
 
-                var itemPrice_1 = newDocs.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__wrapper clearfix")).FirstOrDefault();
+                itemName = listingTitle.ToString();
 
-                var itemPrice_2 = itemPrice_1.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__info clearfix")).FirstOrDefault();
-
-                var itemPrice_3 = itemPrice_2.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__details clearfix")).FirstOrDefault();
-
-                var itemPrice_4 = itemPrice_3.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__detail s-item__detail--primary")).FirstOrDefault();
-
-                var itemTitle = itemPrice_2.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__link")).FirstOrDefault();
-
-                var itemTitle_1 = itemTitle.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__title")).FirstOrDefault();
-
-                itemName = itemTitle_1.InnerText.ToString();
-
-                var itemPrice = itemPrice_4.InnerText.ToString();
+                var itemPrice = price.ToString();
                 var newItemPrice = itemPrice.Replace("$", "");
                 decimal.TryParse(newItemPrice, out newestPrice);
 
@@ -97,9 +67,9 @@ namespace WebCrawler_1.Controllers
                     NewSearch = itemSearch,
                     Date = getDate
                 };
-                var qwerty = _repository.GetUrls;
+                var dbTable = _repository.GetUrls;
 
-                var dataAdded = qwerty.Add(theModel);
+                var dataAdded = dbTable.Add(theModel);
                 _repository.SaveChanges();
 
                 return View(theModel);
@@ -113,55 +83,23 @@ namespace WebCrawler_1.Controllers
                 var web = new HtmlWeb();
                 var document = web.Load(urlWithMultiple);
 
-                var docNodes = document.DocumentNode.Descendants("ul")
-                    .Where(node => node.GetAttributeValue("class", "")
-                .Equals("srp-results srp-list clearfix")).FirstOrDefault();
+                var listingTitle = document.DocumentNode.Descendants("h3")
+                     .Where(node => node.GetAttributeValue("class", "")
+                 .Equals("s-item__title")).FirstOrDefault().GetDirectInnerText();
 
-                var idSet = search.NewSearch;
-
-                for (int i = 1; i < 7; i++)
-                {
-                    idSet = $"srp-river-results-listing{i}";
-                }
-                var newDocs = docNodes.ChildNodes
-                     .Where(node => node.GetAttributeValue("id", "")
-                     .Equals(idSet)).FirstOrDefault();
-
-                if (newDocs == null)
+                var price = document.DocumentNode.Descendants("span")
+                     .Where(node => node.GetAttributeValue("class", "")
+                 .Equals("s-item__price")).FirstOrDefault().GetDirectInnerText();
+                
+                if (listingTitle == null || price == null)
                 {
                     return View("GetPage");
                 }
 
-                var itemPrice_1 = newDocs.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__wrapper clearfix")).FirstOrDefault();
+                itemName = listingTitle.ToString();
 
-                var itemPrice_2 = itemPrice_1.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__info clearfix")).FirstOrDefault();
-
-                var itemPrice_3 = itemPrice_2.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__details clearfix")).FirstOrDefault();
-
-                var itemPrice_4 = itemPrice_3.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__detail s-item__detail--primary")).FirstOrDefault();
-
-                var itemTitle = itemPrice_2.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__link")).FirstOrDefault();
-
-                var itemTitle_1 = itemTitle.ChildNodes
-                    .Where(node => node.GetAttributeValue("class", "")
-                    .Equals("s-item__title")).FirstOrDefault();
-
-                itemName = itemTitle_1.InnerText.ToString();
-
-                var itemPrice = itemPrice_4.InnerText.ToString();
-
+                var itemPrice = price.ToString();
                 var newItemPrice = itemPrice.Replace("$", "");
-
                 decimal.TryParse(newItemPrice, out newestPrice);
 
                 var theModel = new GetUrl
@@ -171,10 +109,11 @@ namespace WebCrawler_1.Controllers
                     NewSearch = itemSearch,
                     Date = getDate
                 };
-                var qwerty = _repository.GetUrls;
+                var dbTable = _repository.GetUrls;
 
-                var dataAdded = qwerty.Add(theModel);
+                var dataAdded = dbTable.Add(theModel);
                 _repository.SaveChanges();
+                
 
                 return View(theModel);
             }
@@ -187,14 +126,23 @@ namespace WebCrawler_1.Controllers
 
             return View(viewInfo);
         }
+        
         public IActionResult Chart()
         {
             var chartInfo = new GetUrl();
             var viewInfo = _repository.GetUrls.Where(i => i.NewSearch == "xbox");
-               
+
             return View(viewInfo);
         }
-    
+        //public IActionResult GetChart(Chart chart, GetUrl getUrl)
+        //{
+        //    var itemLookup = chart.VariableSearched;
+        //    //var returnItem = ;
+        //   var returnedItem = _repository.GetUrls.Where(s => s.NewSearch == itemLookup).Select(x => new { x.Date, x.ItemPrice }).ToList();
+        //    return View("Chart", returnedItem);
+
+        //}
+
         public IActionResult Index()
         {
             return View();

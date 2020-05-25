@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebCrawler_1.Migrations
 {
-    public partial class sixthTry : Migration
+    public partial class SixthTry : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

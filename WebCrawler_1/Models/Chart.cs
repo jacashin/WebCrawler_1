@@ -9,5 +9,6 @@ namespace WebCrawler_1.Models
     {
         public DateTime DateSearched { get; set; }
         public decimal Price { get; set; }
+        public string VariableSearched { get; set; }
     }
 }

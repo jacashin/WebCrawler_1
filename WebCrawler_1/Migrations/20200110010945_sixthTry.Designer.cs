@@ -11,7 +11,7 @@ namespace WebCrawler_1.Migrations
 {
     [DbContext(typeof(WebCrawler_1Context))]
     [Migration("20200110010945_sixthTry")]
-    partial class sixthTry
+    partial class SixthTry
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
