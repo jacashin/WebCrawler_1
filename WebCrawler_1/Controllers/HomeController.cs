@@ -130,18 +130,11 @@ namespace WebCrawler_1.Controllers
         public IActionResult Chart()
         {
             var chartInfo = new GetUrl();
-            var viewInfo = _repository.GetUrls.Where(i => i.NewSearch == "xbox");
+            var viewInfo = _repository.GetUrls.Where(i => i.NewSearch == "xbox")
+                .Where(x => x.Date > DateTime.Now.AddMonths(-3));
 
             return View(viewInfo);
         }
-        //public IActionResult GetChart(Chart chart, GetUrl getUrl)
-        //{
-        //    var itemLookup = chart.VariableSearched;
-        //    //var returnItem = ;
-        //   var returnedItem = _repository.GetUrls.Where(s => s.NewSearch == itemLookup).Select(x => new { x.Date, x.ItemPrice }).ToList();
-        //    return View("Chart", returnedItem);
-
-        //}
 
         public IActionResult Index()
         {

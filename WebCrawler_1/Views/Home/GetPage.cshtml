@@ -20,17 +20,6 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-2">
-        <form asp-action="GetChart">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="NewSearch" class="control-label"></label>
-                <input asp-for="NewSearch" class="form-control" />
-                <span asp-validation-for="NewSearch" class="text-danger"></span>
-                <div class="form-group">
-                    <input type="submit" value="See Chart" class="btn btn-primary" />
-                </div>
-            </div>
-        </form>
-    </div>
+    <a asp-action="Chart"><button type="button" class="btn btn-primary">See Chart</button></a>
+
 </div>
