@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using WebCrawler_1.Data;
 
 namespace WebCrawler_1
@@ -36,18 +37,20 @@ namespace WebCrawler_1
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddHttpContextAccessor();
-
+            services.AddRazorPages();
+            services.AddControllersWithViews();
             services.AddDbContext<WebCrawler_1Context>(options =>
             {
             options.UseSqlServer(Configuration.GetConnectionString("WebCrawler_1Context"));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         });
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)//IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -62,14 +65,20 @@ namespace WebCrawler_1
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+            app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=GetPage}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=GetPage}/{id?}");
             });
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=GetPage}/{id?}");
+            //});
         }
     }
 }

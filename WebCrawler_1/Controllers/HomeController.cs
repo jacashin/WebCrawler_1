@@ -29,8 +29,8 @@ namespace WebCrawler_1.Controllers
             var itemSearch = search.NewSearch;
             var itemName = search.ItemName;
             var newestPrice = search.ItemPrice;
-            var getDate = DateTime.Today;
-            search.Date = getDate;
+            var getDate = DateTime.Now;
+            //search.Date = getDate;
 
             if (!(itemSearch.Contains(" ")))
             {
@@ -85,7 +85,7 @@ namespace WebCrawler_1.Controllers
 
                 var listingTitle = document.DocumentNode.Descendants("h3")
                      .Where(node => node.GetAttributeValue("class", "")
-                 .Equals("s-item__title")).FirstOrDefault().GetDirectInnerText();
+                 .Equals("s-item__title")).First().GetDirectInnerText();
 
                 var price = document.DocumentNode.Descendants("span")
                      .Where(node => node.GetAttributeValue("class", "")
@@ -126,16 +126,64 @@ namespace WebCrawler_1.Controllers
 
             return View(viewInfo);
         }
-        
-        public IActionResult Chart()
+        [HttpGet]
+        public IActionResult Chart(string name)
         {
             var chartInfo = new GetUrl();
-            var viewInfo = _repository.GetUrls.Where(i => i.NewSearch == "xbox")
-                .Where(x => x.Date > DateTime.Now.AddMonths(-3));
+            var viewInfo = _repository.GetUrls.Where(i => i.NewSearch == "xbox");
 
             return View(viewInfo);
         }
+        public IActionResult Timed(GetUrl search)
+        {
+            var itemSearch = search.NewSearch;
+            var itemName = search.ItemName;
+            var newestPrice = search.ItemPrice;
+            var getDate = DateTime.Now;
+            if (DateTime.Now.ToShortTimeString() == "12:18 AM" )
+            {
+                string url = $"https://www.ebay.com/sch/i.html?_nkw=sefer+torah";
 
+                var web = new HtmlWeb();
+                var document = web.Load(url);
+
+                var listingTitle = document.DocumentNode.Descendants("h3")
+                     .Where(node => node.GetAttributeValue("class", "")
+                 .Equals("s-item__title")).FirstOrDefault().GetDirectInnerText();
+
+                var price = document.DocumentNode.Descendants("span")
+                     .Where(node => node.GetAttributeValue("class", "")
+                 .Equals("s-item__price")).FirstOrDefault().GetDirectInnerText();
+
+                var idSet = search.NewSearch;
+
+                if (listingTitle == null || price == null)
+                {
+                    return View("GetPage");
+                }
+
+                itemName = listingTitle.ToString();
+
+                var itemPrice = price.ToString();
+                var newItemPrice = itemPrice.Replace("$", "");
+                decimal.TryParse(newItemPrice, out newestPrice);
+
+                var theModel = new GetUrl
+                {
+                    ItemName = itemName,
+                    ItemPrice = newestPrice,
+                    NewSearch = itemSearch,
+                    Date = getDate
+                };
+                var dbTable = _repository.GetUrls;
+
+                var dataAdded = dbTable.Add(theModel);
+                _repository.SaveChanges();
+
+                return View(theModel);
+            }
+            return null;
+        }
         public IActionResult Index()
         {
             return View();
