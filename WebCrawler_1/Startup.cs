@@ -71,7 +71,7 @@ namespace WebCrawler_1
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=GetPage}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
             //app.UseMvc(routes =>
             //{

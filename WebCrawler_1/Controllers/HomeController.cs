@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -107,30 +108,57 @@ namespace WebCrawler_1.Controllers
                     ItemName = itemName,
                     ItemPrice = newestPrice,
                     NewSearch = itemSearch,
-                    Date = getDate
+                    Date = getDate,
                 };
                 var dbTable = _repository.GetUrls;
 
                 var dataAdded = dbTable.Add(theModel);
                 _repository.SaveChanges();
-                
-
                 return View(theModel);
+            }
+        }
+        [HttpGet]
+        public IActionResult SaveInfo(int? id)
+        {
+            if (id != null)
+            {
+                var viewInfo = _repository.GetUrls.Where(x => x.ID == id).Select(x => new GetUrl()
+                {
+                    ItemName = x.ItemName,
+                    ItemPrice = x.ItemPrice,
+                    Date = x.Date,
+                    NewSearch = x.NewSearch,
+                    ID = x.ID
+                }).ToList();
+                return View(viewInfo);
+            }
+            else
+            {
+                var viewInfo = _repository.GetUrls;
+
+                return View(viewInfo);
             }
 
         }
-        [HttpGet]
-        public IActionResult SaveInfo(int key, GetUrl getUrl)
-        {
-            var viewInfo = _repository.GetUrls;
-
-            return View(viewInfo);
-        }
+        //[HttpDelete]
+        //public IActionResult SaveInfo(int? id)
+        //{
+        //    var removedItem = _repository.GetUrls.d.Where(x => x.ID == id).Select(x => new GetUrl()
+        //    {
+        //        ItemName = x.ItemName,
+        //        ItemPrice = x.ItemPrice,
+        //        Date = x.Date,
+        //        NewSearch = x.NewSearch,
+        //        ID = x.ID
+        //    }).Delete().ToList();
+        //    var viewInfo = removedItem.Remove().ToList();
+        //    return View(viewInfo);
+        //}
         [HttpGet]
         public IActionResult Chart(string name)
         {
-            var chartInfo = new GetUrl();
-            var viewInfo = _repository.GetUrls.Where(i => i.NewSearch == "xbox");
+            //var chartInfo = new GetUrl();
+            var viewInfo = _repository.GetUrls.Where(i => i.NewSearch == name);
 
             return View(viewInfo);
         }
@@ -198,6 +226,27 @@ namespace WebCrawler_1.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        [HttpGet]
+        public IActionResult CreateFile()
+        {
+            var viewInfo = _repository.GetUrls.Select(x => new 
+            { 
+            x.ID, 
+            x.ItemName,
+            x.ItemPrice,
+            x.Date
+            }).ToList();
+
+            string docPath =
+              Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            using (StreamWriter outputFile = new(Path.Combine(docPath, "EbayPriceListTest.txt")))
+            {
+                foreach (var info in viewInfo)
+                    outputFile.WriteLine(info);
+            }
+            return View("CreateFile", docPath );
         }
     }
 }
