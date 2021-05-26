@@ -227,8 +227,8 @@ namespace WebCrawler_1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        [HttpGet]
-        public IActionResult CreateFile()
+        [HttpPost]
+        public object CreateFile()
         {
             var viewInfo = _repository.GetUrls.Select(x => new 
             { 
@@ -240,13 +240,12 @@ namespace WebCrawler_1.Controllers
 
             string docPath =
               Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
-            using (StreamWriter outputFile = new(Path.Combine(docPath, "EbayPriceListTest.txt")))
+            using (StreamWriter outputFile = new(Path.Combine(docPath, "EbayPriceListTest.csv")))
             {
                 foreach (var info in viewInfo)
                     outputFile.WriteLine(info);
             }
-            return View("CreateFile", docPath );
+            return View("Index", docPath);
         }
     }
 }
