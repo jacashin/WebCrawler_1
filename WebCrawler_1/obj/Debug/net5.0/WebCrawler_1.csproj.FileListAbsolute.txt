@@ -297,3 +297,4 @@ C:\Users\jacob\source\repos\jacashin\WebCrawler_1\WebCrawler_1\obj\Debug\net5.0\
 C:\Users\jacob\source\repos\jacashin\WebCrawler_1\WebCrawler_1\obj\Debug\net5.0\WebCrawler_1.genruntimeconfig.cache
 C:\Users\jacob\source\repos\jacashin\WebCrawler_1\WebCrawler_1\obj\Debug\net5.0\WebCrawler_1.csprojAssemblyReference.cache
 C:\Users\jacob\source\repos\jacashin\WebCrawler_1\WebCrawler_1\obj\Debug\net5.0\Razor\Views\Home\CreateFile.cshtml.g.cs
+C:\Users\jacob\source\repos\jacashin\WebCrawler_1\WebCrawler_1\obj\Debug\net5.0\Razor\Views\Home\FindItemOnChart.cshtml.g.cs

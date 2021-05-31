@@ -21,7 +21,7 @@ namespace WebCrawler_1.Controllers
         }
         public IActionResult GetPage()
         {
-            
+
             return View();
         }
         [HttpPost]
@@ -31,9 +31,11 @@ namespace WebCrawler_1.Controllers
             var itemName = search.ItemName;
             var newestPrice = search.ItemPrice;
             var getDate = DateTime.Now;
-            //search.Date = getDate;
-
-            if (!(itemSearch.Contains(" ")))
+            if (itemSearch == null)
+            {
+                return View();
+            }
+            else if (!(itemSearch.Contains(" ")))
             {
                 string url = $"https://www.ebay.com/sch/i.html?_nkw={itemSearch}";
 
@@ -47,7 +49,7 @@ namespace WebCrawler_1.Controllers
                 var price = document.DocumentNode.Descendants("span")
                      .Where(node => node.GetAttributeValue("class", "")
                  .Equals("s-item__price")).FirstOrDefault().GetDirectInnerText();
-                
+
                 var idSet = search.NewSearch;
 
                 if (listingTitle == null || price == null)
@@ -91,7 +93,7 @@ namespace WebCrawler_1.Controllers
                 var price = document.DocumentNode.Descendants("span")
                      .Where(node => node.GetAttributeValue("class", "")
                  .Equals("s-item__price")).FirstOrDefault().GetDirectInnerText();
-                
+
                 if (listingTitle == null || price == null)
                 {
                     return View("GetPage");
@@ -138,27 +140,12 @@ namespace WebCrawler_1.Controllers
 
                 return View(viewInfo);
             }
-
         }
-        //[HttpDelete]
-        //public IActionResult SaveInfo(int? id)
-        //{
-        //    var removedItem = _repository.GetUrls.d.Where(x => x.ID == id).Select(x => new GetUrl()
-        //    {
-        //        ItemName = x.ItemName,
-        //        ItemPrice = x.ItemPrice,
-        //        Date = x.Date,
-        //        NewSearch = x.NewSearch,
-        //        ID = x.ID
-        //    }).Delete().ToList();
-        //    var viewInfo = removedItem.Remove().ToList();
-        //    return View(viewInfo);
-        //}
-        [HttpGet]
-        public IActionResult Chart(string name)
+        [HttpPost]
+        public IActionResult Chart(GetUrl getUrl)
         {
-            //var chartInfo = new GetUrl();
-            var viewInfo = _repository.GetUrls.Where(i => i.NewSearch == name);
+
+            var viewInfo = _repository.GetUrls.Where(i => i.NewSearch == getUrl.NewSearch);
 
             return View(viewInfo);
         }
@@ -168,7 +155,7 @@ namespace WebCrawler_1.Controllers
             var itemName = search.ItemName;
             var newestPrice = search.ItemPrice;
             var getDate = DateTime.Now;
-            if (DateTime.Now.ToShortTimeString() == "12:18 AM" )
+            if (DateTime.Now.ToShortTimeString() == "12:18 AM")
             {
                 string url = $"https://www.ebay.com/sch/i.html?_nkw=sefer+torah";
 
@@ -227,15 +214,20 @@ namespace WebCrawler_1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        [HttpGet]
+        public IActionResult FindItemOnChart(GetUrl getUrl)
+        {
+            return View();
+        }
         [HttpPost]
         public object CreateFile()
         {
-            var viewInfo = _repository.GetUrls.Select(x => new 
-            { 
-            x.ID, 
-            x.ItemName,
-            x.ItemPrice,
-            x.Date
+            var viewInfo = _repository.GetUrls.Select(x => new
+            {
+                x.ID,
+                x.ItemName,
+                x.ItemPrice,
+                x.Date
             }).ToList();
 
             string docPath =
