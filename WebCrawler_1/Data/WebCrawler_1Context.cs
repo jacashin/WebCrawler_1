@@ -14,7 +14,7 @@ namespace WebCrawler_1.Data
             : base(options)
         {
         }
-        public DbSet<GetUrl> GetUrls { get; set; }
+        public DbSet<GetUrls> GetUrls { get; set; }
 
         public WebCrawler_1Context()
         {

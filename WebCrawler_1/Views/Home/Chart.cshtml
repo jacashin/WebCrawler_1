@@ -1,7 +1,7 @@
-@model IEnumerable<GetUrl>
+@model IEnumerable<GetUrls>
 
 @{
-    var XLabels = Newtonsoft.Json.JsonConvert.SerializeObject(Model.Select(x => x.Date.ToShortDateString() + x.Date.ToShortTimeString()).ToList());
+    var XLabels = (Newtonsoft.Json.JsonConvert.SerializeObject(Model.Select(x => x.Date.ToShortDateString()).ToList()));
     var YValues = Newtonsoft.Json.JsonConvert.SerializeObject(Model.Select(x => x.ItemPrice).ToList());
     ViewData["Title"] = "Line Chart";
 }
@@ -10,7 +10,7 @@
 
 <html>
 <head>
- 
+
     <meta name="viewport" content="width=device-width" />
     <title>Line</title>
 </head>
@@ -27,13 +27,15 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 <script type="text/javascript">
+    
         $(function () {
-    var chartName = "chart";
+            var chartName = "chart";
+            alert("KITE");
         var ctx = document.getElementById(chartName).getContext('2d');
-        var data = {
+            var data = {
                 labels: @Html.Raw(XLabels),
                 datasets: [{
-                    label: "Xbox Chart",
+                    label: "@Model.FirstOrDefault().NewSearch" +" Chart",
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -83,7 +85,7 @@ var options = {
                         ticks: {
                             min: 0,
                             beginAtZero: true
-                        },
+               },
                         gridLines: {
                             display: false
                         }
@@ -96,4 +98,4 @@ var options = {
                 type:'line'
             });
         });
-</script> 
+</script>

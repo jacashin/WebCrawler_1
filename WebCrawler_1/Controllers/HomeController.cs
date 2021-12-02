@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -7,8 +8,14 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Protocols;
 using WebCrawler_1.Data;
 using WebCrawler_1.Models;
+using Dapper;
+using System.Configuration;
+using Quartz.Impl;
+using Quartz;
 
 namespace WebCrawler_1.Controllers
 {
@@ -25,7 +32,7 @@ namespace WebCrawler_1.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult GetUrl(GetUrl search)
+        public IActionResult GetUrl(GetUrls search)
         {
             var itemSearch = search.NewSearch;
             var itemName = search.ItemName;
@@ -63,7 +70,7 @@ namespace WebCrawler_1.Controllers
                 var newItemPrice = itemPrice.Replace("$", "");
                 decimal.TryParse(newItemPrice, out newestPrice);
 
-                var theModel = new GetUrl
+                var theModel = new GetUrls
                 {
                     ItemName = itemName,
                     ItemPrice = newestPrice,
@@ -105,7 +112,7 @@ namespace WebCrawler_1.Controllers
                 var newItemPrice = itemPrice.Replace("$", "");
                 decimal.TryParse(newItemPrice, out newestPrice);
 
-                var theModel = new GetUrl
+                var theModel = new GetUrls
                 {
                     ItemName = itemName,
                     ItemPrice = newestPrice,
@@ -124,7 +131,7 @@ namespace WebCrawler_1.Controllers
         {
             if (id != null)
             {
-                var viewInfo = _repository.GetUrls.Where(x => x.ID == id).Select(x => new GetUrl()
+                var viewInfo = _repository.GetUrls.Where(x => x.ID == id).Select(x => new GetUrls()
                 {
                     ItemName = x.ItemName,
                     ItemPrice = x.ItemPrice,
@@ -142,14 +149,14 @@ namespace WebCrawler_1.Controllers
             }
         }
         [HttpPost]
-        public IActionResult Chart(GetUrl getUrl)
+        public IActionResult Chart(GetUrls getUrl)
         {
 
             var viewInfo = _repository.GetUrls.Where(i => i.NewSearch == getUrl.NewSearch);
 
             return View(viewInfo);
         }
-        public IActionResult Timed(GetUrl search)
+        public IActionResult Timed(GetUrls search)
         {
             var itemSearch = search.NewSearch;
             var itemName = search.ItemName;
@@ -183,7 +190,7 @@ namespace WebCrawler_1.Controllers
                 var newItemPrice = itemPrice.Replace("$", "");
                 decimal.TryParse(newItemPrice, out newestPrice);
 
-                var theModel = new GetUrl
+                var theModel = new GetUrls
                 {
                     ItemName = itemName,
                     ItemPrice = newestPrice,
@@ -201,9 +208,24 @@ namespace WebCrawler_1.Controllers
         }
         public IActionResult Index()
         {
-            return View();
-        }
+            List<GetUrls> output = new List<GetUrls>();
+            var sql = "select * from GetUrls where Id < 10";
+            using (IDbConnection _db = new SqlConnection(@"Server=LAPTOP-GP0BMK15\SQLEXPRESS;Database=WebCrawler_1Context;Trusted_Connection=True"))
+                output = _db.Query<GetUrls>(sql).ToList();
 
+            return View(output);
+        }
+        [HttpPost]
+        public /*List<GetUrls>*/IActionResult SaveInfo(GetUrls getUrl)
+        {
+            var removedItem = _repository.GetUrls.Find(getUrl);
+            _repository.GetUrls.Remove(removedItem);
+            _repository.SaveChanges();
+            var a =  _repository.GetUrls.ToList();
+            //RedirectToAction("SaveInfo");
+            return View(a);
+
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -215,7 +237,7 @@ namespace WebCrawler_1.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         [HttpGet]
-        public IActionResult FindItemOnChart(GetUrl getUrl)
+        public IActionResult FindItemOnChart(GetUrls getUrl)
         {
             return View();
         }
@@ -232,12 +254,27 @@ namespace WebCrawler_1.Controllers
 
             string docPath =
               Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            using (StreamWriter outputFile = new(Path.Combine(docPath, "EbayPriceListTest.csv")))
+            using (StreamWriter outputFile = new(Path.Combine(docPath, "EbayPriceListTest.txt")))
             {
                 foreach (var info in viewInfo)
                     outputFile.WriteLine(info);
             }
             return View("Index", docPath);
+        }
+        public static async Task Timer()
+        {
+            // Grab the Scheduler instance from the Factory
+            StdSchedulerFactory factory = new StdSchedulerFactory();
+            IScheduler scheduler = await factory.GetScheduler();
+
+            // and start it off
+            await scheduler.Start();
+
+            // some sleep to show what's happening
+            await Task.Delay(TimeSpan.FromSeconds(10));
+
+            // and last shut down the scheduler when you are ready to close your program
+            await scheduler.Shutdown();
         }
     }
 }

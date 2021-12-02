@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebCrawler_1.Data;
+using Dapper;
 
 namespace WebCrawler_1
 {
@@ -44,13 +45,10 @@ namespace WebCrawler_1
             options.UseSqlServer(Configuration.GetConnectionString("WebCrawler_1Context"));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         });
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)//IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -71,14 +69,8 @@ namespace WebCrawler_1
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=GetPage}/{id?}");
             });
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=GetPage}/{id?}");
-            //});
         }
     }
 }

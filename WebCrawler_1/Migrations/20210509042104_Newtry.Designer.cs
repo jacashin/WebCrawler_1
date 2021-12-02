@@ -21,7 +21,7 @@ namespace WebCrawler_1.Migrations
                 .HasAnnotation("ProductVersion", "5.0.5")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WebCrawler_1.Models.GetUrl", b =>
+            modelBuilder.Entity("WebCrawler_1.Models.GetUrls", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()

@@ -1,6 +1,7 @@
 ﻿@using WebCrawler_1.Data;
 @using WebCrawler_1.Models;
-@model IEnumerable<GetUrl>
+
+    @model IEnumerable<GetUrls>
 @{
     ViewData["Title"] = "SaveInfo";
 }
@@ -27,30 +28,36 @@
     </tr>
     @{ foreach (var item in Model)
         {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.NewSearch
+            </td>
+            <td>
+                @item.ItemName
+            </td>
 
-            <tr>
-                <td>
-                    @item.ID
-                </td>
-                <td>
-                    @item.NewSearch
-                </td>
-                <td>
-                    @item.ItemName
-                </td>
+            <td>
+                @item.ItemPrice
+            </td>
 
-                <td>
-                    @item.ItemPrice
-                </td>
+            <td>
+                @item.Date
+            </td>
 
-                <td>
-                    @item.Date
-                </td>
+            <td>
+                <form asp-action="SaveInfo">
+                    <div class="form-group">
+            <input type="hidden" name="SaveInfo" value="@item.ID" data="@item.ID" />
+            <input type="submit" value="Delete" />
+            @*<input type="submit" value="Delete" data="@Model" class="btn btn-danger" />*@
+            </div>
+            </form>
+            </td>
 
-                <td>
-                </td>
-
-            </tr>
+        </tr>
         }
     }
 </table>
