@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\TimerController.cs" />
     <Compile Remove="Data\WebCrawlerDB.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\AlertFile.js" />
   </ItemGroup>
 
 

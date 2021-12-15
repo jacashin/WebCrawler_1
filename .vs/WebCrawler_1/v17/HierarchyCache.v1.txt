@@ -1,0 +1,262 @@
+﻿++Solution 'WebCrawler_1' ‎(1 of 1 project)
+i:{00000000-0000-0000-0000-000000000000}:WebCrawler_1.sln
+++WebCrawler_1
+i:{00000000-0000-0000-0000-000000000000}:WebCrawler_1
+++Connected Services 
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>627
+++Secrets.json (Local)
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>657
+++SQL Server Database
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>659
+++Dependencies
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>626
+++Analyzers
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:analyzers
+++Frameworks
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:frameworks
+++Packages
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:packages
+++ChartJS (21.2.3)
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>644
+++Dapper (2.0.123)
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>642
+++HtmlAgilityPack (1.11.38)
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>639
+++Microsoft.EntityFrameworkCore (5.0.10)
+++Microsoft.EntityFrameworkCore.Relational (5.0.10)
+++Microsoft.EntityFrameworkCore.SqlServer (5.0.10)
+++Microsoft.EntityFrameworkCore.Tools (5.0.10)
+++Microsoft.VisualStudio.Web.CodeGeneration.Design (5.0.2)
+++Quartz (3.3.3)
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>648
+++System.Configuration.ConfigurationManager (5.0.0)
+++Properties
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\properties\
+++launchSettings.json
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\properties\launchsettings.json
+++wwwroot
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\
+++css
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\css\
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\
+++site.css
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\css\site.css
+++js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\js\
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\js\
+++lib
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\
+++favicon.ico
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\favicon.ico
+++Controllers
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\controllers\
+++Data
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\data\
+++Migrations
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\migrations\
+++Models
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\models\
+++Views
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\
+++appsettings.json
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\appsettings.json
+++appsettings.Development.json
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\appsettings.development.json
+++Program.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\program.cs
+++Startup.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\startup.cs
+++Secrets.json (Local) dependency is detected
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>658
+++SQL Server Database dependency is detected
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>660
+++Microsoft.AspNetCore.Analyzers
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.CodeAnalysis.Analyzers
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0\analyzers\dotnet\cs\microsoft.codeanalysis.analyzers.dll
+++Microsoft.CodeAnalysis.CSharp.Analyzers
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0\analyzers\dotnet\cs\microsoft.codeanalysis.csharp.analyzers.dll
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.AspNetCore.App
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\microsoft.aspnetcore.app
+++Microsoft.NETCore.App
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\microsoft.netcore.app
+++site.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\js\site.js
+++bootstrap
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\
+++jquery
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery\
+++jquery-validation
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery-validation\
+++jquery-validation-unobtrusive
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery-validation-unobtrusive\
+++HomeController.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\controllers\homecontroller.cs
+++TimerController.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\controllers\timercontroller.cs
+++WebCrawler_1Context.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\data\webcrawler_1context.cs
+++20210509042104_Newtry.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\migrations\20210509042104_newtry.cs
+++20210509044541_second.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\migrations\20210509044541_second.cs
+++Chart.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\models\chart.cs
+++ErrorViewModel.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\models\errorviewmodel.cs
+++GetUrlList.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\models\geturllist.cs
+++GetUrls.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\models\geturls.cs
+++Home
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\home\
+++Shared
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\shared\
+++_ViewImports.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\_viewimports.cshtml
+++_ViewStart.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\_viewstart.cshtml
+++AlertFile.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\alertfile.js
+++dist
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery\dist\
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery-validation\dist\
+++LICENSE
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\license
+++LICENSE.txt
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery\license.txt
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery-validation-unobtrusive\license.txt
+++LICENSE.md
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery-validation\license.md
+++jquery.validate.unobtrusive.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
+++20210509042104_Newtry.Designer.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\migrations\20210509042104_newtry.designer.cs
+++20210509044541_second.Designer.cs
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\migrations\20210509044541_second.designer.cs
+++Chart.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\home\chart.cshtml
+++CreateFile.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\home\createfile.cshtml
+++FindItemOnChart.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\home\finditemonchart.cshtml
+++GetPage.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\home\getpage.cshtml
+++GetUrl.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\home\geturl.cshtml
+++Index.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\home\index.cshtml
+++Privacy.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\home\privacy.cshtml
+++SaveInfo.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\home\saveinfo.cshtml
+++_CookieConsentPartial.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\shared\_cookieconsentpartial.cshtml
+++_Layout.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\shared\_layout.cshtml
+++_ValidationScriptsPartial.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\shared\_validationscriptspartial.cshtml
+++Error.cshtml
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\views\shared\error.cshtml
+++jquery.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery\dist\jquery.js
+++additional-methods.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery-validation\dist\additional-methods.js
+++jquery.validate.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+++jquery.validate.unobtrusive.min.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
+++bootstrap.css
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+++bootstrap-grid.css
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+++bootstrap-reboot.css
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+++bootstrap.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+++jquery.min.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery\dist\jquery.min.js
+++additional-methods.min.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+++jquery.validate.min.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+++bootstrap.css.map
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+++bootstrap.min.css
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+++bootstrap-grid.css.map
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+++bootstrap-grid.min.css
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+++bootstrap-reboot.css.map
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+++bootstrap-reboot.min.css
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+++bootstrap.bundle.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+++bootstrap.js.map
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+++bootstrap.min.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+++jquery.min.map
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\jquery\dist\jquery.min.map
+++bootstrap.min.css.map
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+++bootstrap-grid.min.css.map
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+++bootstrap-reboot.min.css.map
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+++bootstrap.bundle.js.map
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+++bootstrap.bundle.min.js
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+++bootstrap.min.js.map
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+++bootstrap.bundle.min.js.map
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\source\repos\jacashin\webcrawler_1\webcrawler_1\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+++C:\Program Files\dotnet\sdk\6.0.100\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Analyzers.dll
+++C:\Program Files\dotnet\sdk\6.0.100\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Components.Analyzers.dll
+++C:\Program Files\dotnet\sdk\6.0.100\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Mvc.Analyzers.dll
+++Microsoft.EntityFrameworkCore (6.0.10)
+++Microsoft.EntityFrameworkCore.Relational (6.0.10)
+++C:\Program Files\dotnet\sdk\6.0.100\Sdks\Microsoft.NET.Sdk\targets\..\analyzers\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
+++C:\Program Files\dotnet\sdk\6.0.100\Sdks\Microsoft.NET.Sdk\targets\..\analyzers\Microsoft.CodeAnalysis.NetAnalyzers.dll
+++Microsoft.EntityFrameworkCore.SqlServer (6.0.10)
+++Microsoft.EntityFrameworkCore.Tools (6.0.10)
+++Microsoft.AspNetCore.App.Analyzers
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Razor.Internal.SourceGenerator.Transport
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
+++Microsoft.Extensions.Logging.Generators
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++System.Text.Json.SourceGeneration
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Microsoft.EntityFrameworkCore (6.0.0)
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>713
+++System.Configuration.ConfigurationManager (6.0.0)
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>715
+++Microsoft.EntityFrameworkCore.Relational (6.0.0)
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>716
+++Microsoft.EntityFrameworkCore.SqlServer (6.0.0)
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>714
+++Microsoft.EntityFrameworkCore.Tools (6.0.0)
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>717
+++Microsoft.VisualStudio.Web.CodeGeneration.Design (6.0.0)
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:>718
+++MessagePackAnalyzer
+i:{8353f866-b7ff-4597-8f17-78c435b23a31}:c:\users\jacob\.nuget\packages\messagepackanalyzer\2.1.152\analyzers\dotnet\messagepackanalyzer.dll
