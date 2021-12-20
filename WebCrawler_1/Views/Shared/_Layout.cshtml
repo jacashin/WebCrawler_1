@@ -47,6 +47,12 @@
     </header>
     <div class="container">
         <partial name="_CookieConsentPartial" />
+           <div id="pleaseWait"
+                class="pleaseWaitMessage d-none">
+                <h4>
+                    <span id="theWaitMessage">Please Wait While Loading....</span>
+                </h4>
+            </div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

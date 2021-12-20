@@ -4,18 +4,13 @@ using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
 using HtmlAgilityPack;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
-using Microsoft.IdentityModel.Protocols;
 using WebCrawler_1.Data;
 using WebCrawler_1.Models;
 using Dapper;
-using System.Configuration;
-using Quartz.Impl;
-using Quartz;
+
 
 namespace WebCrawler_1.Controllers
 {
@@ -214,17 +209,6 @@ namespace WebCrawler_1.Controllers
                 output = _db.Query<GetUrls>(sql).ToList();
 
             return View(output);
-        }
-        [HttpPost]
-        public /*List<GetUrls>*/IActionResult SaveInfo(GetUrls getUrl)
-        {
-            var removedItem = _repository.GetUrls.Find(getUrl);
-            _repository.GetUrls.Remove(removedItem);
-            _repository.SaveChanges();
-            var a =  _repository.GetUrls.ToList();
-            //RedirectToAction("SaveInfo");
-            return View(a);
-
         }
         public IActionResult Privacy()
         {

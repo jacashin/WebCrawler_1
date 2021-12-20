@@ -10,11 +10,12 @@
         <form asp-action="GetUrl">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="NewSearch" class="control-label"></label>
-                <input asp-for="NewSearch" class="form-control" />
+                
+                   <label asp-for="NewSearch" class="control-label"></label>
+                   <input asp-for="NewSearch" class="form-control"/>
                 <span asp-validation-for="NewSearch" class="text-danger"></span>
                 <div class="form-group">
-                    <input type="submit" value="Get Url" class="btn btn-primary" />
+                    <input type="submit" value="Get Url" class="btn btn-primary" onclick="mainController.pleaseWait()"/>
                 </div>
                 <a asp-action="FindItemOnChart"><button type="button" class="btn btn-primary">See Chart</button></a>
             </div>

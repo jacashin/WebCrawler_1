@@ -6,7 +6,22 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
-
+.pleaseWeaiArea{
+    background: gray;
+    opacity:.5;
+}
+.pleaseWaitMessage{
+    border: black solid .5em;
+    opacity: 1;
+    text-align: center;
+    background: white;
+    z-index: 899;
+    padding: 3em;
+    position: absolute;
+    left: 50%;
+    top: 60em;
+    transform: translate(-50%,0);
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
